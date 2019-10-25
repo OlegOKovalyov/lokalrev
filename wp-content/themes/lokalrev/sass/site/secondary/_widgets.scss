@@ -1,8 +1,99 @@
-.widget {
-	margin: 0 0 1.5em;
+//.widget {
+//	margin: 0 0 1.5em;
+//
+//	/* Make sure select elements fit in widgets. */
+//	select {
+//		max-width: 100%;
+//	}
+//}
 
-	/* Make sure select elements fit in widgets. */
-	select {
-		max-width: 100%;
+.site-footer {
+	background-color: #efefef;
+	color: #313433;
+	padding-top: 103px;
+	padding-bottom: 32px;
+
+	hr {
+		max-width: 1340px;
+		height: 1px;
+		background-color: #000000;
+		opacity: 0.15;
+	}
+}
+
+.first-row {
+	margin-bottom: 129px;
+
+	.widget_text {
+		opacity: 0.8;
+
+		h2 {
+			font-family: 'Domine', serif;
+			font-size: 20px;
+			line-height: 22px;
+			margin-bottom: 25px;
+		}
+
+		.textwidget p {
+			font-size: 14px;
+			line-height: 22px;
+		}
+	}
+
+	.widget_media_image {
+		//max-width: 150px;
+		max-height: 470px;
+		position: relative;
+		text-align: right;
+		img {
+			//width: 52%;
+			width: 151px;
+			max-height: 467px;
+			position: absolute;
+			display: block;
+			right: -73px;
+			top: -86px;
+		}
+	}
+}
+
+.second-row {
+	margin-bottom: 22px;
+}
+
+.site-info {
+	font-size: 12px;
+	opacity: 0.6;
+
+	p {
+		margin-top: 12px;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.first-row {
+		margin-bottom: 30px;
+
+		.col-lg-3:last-child {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.site-footer {
+		padding-top: 60px;
+		padding-bottom: 20px;
+
+		.first-row .widget_text h2 {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+@media screen and (min-width: 992px) and (max-width: 1440px) {
+	.first-row .widget_media_image img {
+		right: 0;
+		top: -36px;
 	}
 }

@@ -1,6 +1,13 @@
+/* Primary Menu (Top) */
 .site-header-wrap {
-	display: flex;
 	height: 108px;
+	.row {
+		flex-wrap: unset;
+		height: 100%;
+	}
+	.custom-logo {
+		margin-left: 13px;
+	}
 }
 
 .site-branding {
@@ -19,39 +26,6 @@
 		margin: 0;
 		padding-left: 0;
 
-		ul {
-			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			float: left;
-			position: absolute;
-			top: 100%;
-			left: -999em;
-			z-index: 99999;
-
-			ul {
-				left: -999em;
-				top: 0;
-			}
-
-			li {
-				&:hover > ul,
-				&.focus > ul {
-					left: 100%;
-				}
-			}
-
-			a {
-				width: 200px;
-			}
-
-			:hover > a,
-			.focus > a {
-			}
-
-			a:hover,
-			a.focus {
-			}
-		}
-
 		li:hover > ul,
 		li.focus > ul {
 			left: auto;
@@ -60,7 +34,8 @@
 
 	li {
 		float: left;
-		margin-left: 39px;
+		margin-left: 42px;
+		margin-top: 16px;
 		position: relative;
 
 		&:hover > a,
@@ -68,13 +43,39 @@
 		}
 	}
 
+	li:last-child {
+		margin-top: 0;
+	}
+
 	a {
+        color: $top-menu-color;
 		display: block;
 		font-size: 18px;
 		font-weight: 400;
 		line-height: 24px;
 		text-decoration: none;
 	}
+
+    li.custom-link-btn a {
+      color: #ea5260;
+      display: inline-block;
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      padding: 12px 22px 11px 22px;
+      line-height: 1.5;
+      border-radius: 35px;
+      border: 2px solid #e94857;
+
+      &:hover {
+        background-color: #ea5260;
+        color: #fff;
+      }
+    }
 
 	.current_page_item > a,
 	.current-menu-item > a,
@@ -89,32 +90,117 @@
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-	.main-navigation ul {
-		display: block;
-	}
+
+@media screen and (max-width: 991px) {
+  .site-branding {
+    margin: auto 0;
+  }
+  header.open {
+    .toggle-menu span:nth-child(1) {
+      transform: rotate(405deg);
+      transform-origin: left top;
+      position: relative;
+      left: 3px;
+      width: 110%;
+    }
+
+    .toggle-menu span:nth-child(2) {
+      transform: scalex(0) rotate(360deg);
+    }
+
+    .toggle-menu span:nth-child(3) {
+      transform: rotate(-405deg);
+      transform-origin: left top;
+      position: relative;
+      left: 1px;
+      top: 2px;
+      width: 110%;
+    }
+
+    nav {
+      display: block;
+      width: 100%;
+      background-color: rgba(233, 72, 87, 0.3);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .main-navigation {
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 130px;
+        width: 100%;
+      }
+
+      li {
+        margin-left: 0;
+      }
+
+      li:last-child a {
+        font-size: 18px;
+      }
+
+      a {
+        color: $primary;
+        font-size: 30px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  .toggle-menu {
+    position: absolute;
+    top: 33px;
+    right: calc(10% - 20px);
+    width: 31px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+
+    span {
+      display: block;
+      margin: 4px 0;
+      width: 100%;
+      height: 3px;
+      background: $primary;
+      transition: .5s;
+    }
+  }
 }
 
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
-
-	.site-main & {
-		margin: 0 0 1.5em;
-		overflow: hidden;
-	}
-
-	.nav-previous {
-		float: left;
-		width: 50%;
-	}
-
-	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
-	}
+@media screen and (min-width: 992px) {
+  .menu-toggle,
+  .toggle-menu {
+      display: none;
+  }
+  .main-navigation ul {
+      display: block;
+  }
 }
+
+//.comment-navigation,
+//.posts-navigation,
+//.post-navigation {
+//
+//	.site-main & {
+//		margin: 0 0 1.5em;
+//		overflow: hidden;
+//	}
+//
+//	.nav-previous {
+//		float: left;
+//		width: 50%;
+//	}
+//
+//	.nav-next {
+//		float: right;
+//		text-align: right;
+//		width: 50%;
+//	}
+//}
