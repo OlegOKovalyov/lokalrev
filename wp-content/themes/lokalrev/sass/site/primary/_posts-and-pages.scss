@@ -1,23 +1,123 @@
-.sticky {
-	display: block;
+//.sticky {
+//	display: block;
+//}
+//
+//.post,
+//.page {
+//	margin: 0 0 1.5em;
+//}
+//
+//.updated:not(.published) {
+//	display: none;
+//}
+//
+//.page-content,
+//.entry-content,
+//.entry-summary {
+//	margin: 1.5em 0 0;
+//}
+//
+//.page-links {
+//	clear: both;
+//	margin: 0 0 1.5em;
+//}
+
+
+
+
+/* Mainpage */
+// Hero
+.jumbotron {
+	h1 {
+		padding-top: 146px;
+		padding-left: 56px;
+	}
+
+	p {
+		font-size: 20px;
+		letter-spacing: 0.15px;
+		line-height: 26px;
+		padding-top: 16px;
+		padding-left: 56px;
+		padding-bottom: 14px;
+		width: 430px;
+	}
+
+	.hero-btn {
+		padding-left: 55px;
+		padding-bottom: 156px;
+	}
 }
 
-.post,
-.page {
-	margin: 0 0 1.5em;
+//Quote
+.quote-and-form {
+	background: url(images/bg_quote.png) no-repeat 21% 0%;
+
+	.blockquote {
+		color: $secondary;
+		max-width: 375px;
+		font-family: 'Domine', serif;
+		font-weight: 500;
+		line-height: 1.875rem;
+		position: relative;
+
+		&:before {
+			content: "";
+			background-image: url(images/i_quotes.png);
+			background-size: 30px 24px;
+			width: 30px;
+			height: 240px;
+			background-repeat: no-repeat;
+			margin-left: 0;
+			margin-top: 0;
+			position: absolute;
+			//font-size: 5rem;
+			//font-weight: 500;
+			//line-height: 2.75rem;
+			position: absolute;
+			top: 9px;
+			left: -35px;
+		}
+
+		.blockquote-footer {
+			font-family: 'Roboto', sans-serif;
+			font-size: 1rem;
+			font-weight: 300;
+			line-height: 1.25rem;
+
+			&:before {
+				content: "";
+			}
+		}
+
+	}
 }
 
-.updated:not(.published) {
-	display: none;
-}
+// Form
+.quote-and-form {
+	form {
+		background-color: $dark;
+		padding: 54px 89px 96px 64px;
+		
+		h2 {
+			color: $white;
+		}
 
-.page-content,
-.entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
-}
+		label {
+			color: $white;
+		}
 
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+		.custom-checkbox {
+			.custom-control-input {
+				//background-color: $primary;
+				//color: $white;
+				//width: 29px !important;
+				//height: 30px !important;
+			}
+		}
+
+		input[type=submit] {
+			border-radius: 26px;
+		}
+	}
 }

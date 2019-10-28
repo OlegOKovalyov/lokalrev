@@ -1,0 +1,153 @@
+/*$color__background-body: #fff;
+$color__background-screen: #f1f1f1;
+$color__background-hr: #ccc;
+$color__background-button: #e6e6e6;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
+
+$color__text-screen: #21759b;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+$color__link: #3f3f3f;
+$color__link-visited: purple;
+$color__link-hover: midnightblue;
+$color__text-main: #404040;
+
+
+$color__border-button: #ccc #ccc #bbb;
+$color__border-button-hover: #ccc #bbb #aaa;
+$color__border-button-focus: #aaa #bbb #bbb;
+$color__border-input: #ccc;
+$color__border-abbr: #666;*/
+
+//.btn {
+//  color: #ea5260;
+//}
+
+/*$primary: #e94857;
+$top-menu-color: #3f3f3f;
+
+$theme-colors: (
+        "primary": #e94857,
+        "danger": #ff4136
+);*/
+
+//.btn-outline-primary {
+//  color: #e94857 !important;
+//  border-color: #e94857 !important;
+//}
+
+//@function theme-color($key: "primary") {
+//  @return map-get($theme-colors, $key);
+//}
+
+//.btn-outline-primary {
+//  @include button-outline-variant(#e94857, #222222, lighten(#e94857,5%), #e94857);
+//}
+
+//********************** File: lokalrev/sass/variables-site/_colors-site.scss *******************/
+// Color system
+$white:    #fff;
+$gray-100: #f9f9f9;
+$gray-200: #efefef;
+$gray-300: #e4e4e4;
+$gray-400: #9a9a9a;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #3f3f3f;
+$gray-800: #3a3a3a;
+$gray-900: #313433;
+$black:    #000 !default;
+
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #e94857;
+$red-txt: #a1343c;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$primary:       $red; // buttons, border_buttons, red_line_on_slider, red_text_in_form, checkbox_in_form
+$secondary:     $red-txt; // quote, bg_red_block, heading&dots_pink_block
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$menu-txt:      $gray-700; // top_menu_color_text
+$dark-txt:      $gray-800;  // jumbotron_h1&text, quote_author, h2&text
+$dark:          $gray-900; // bg_form, bg_slider, text_on_pink_bg footer_h2&text
+
+
+$theme-colors: (
+        "primary":    $primary,
+        "secondary":  $secondary,
+        "success":    $success,
+        "info":       $info,
+        "warning":    $warning,
+        "danger":     $danger,
+        "menu-txt":   $menu-txt,
+        "dark-txt":   $dark-txt,
+        "dark":       $dark
+);
+
+// Body
+$body-bg:                   $white !default;
+$body-color:                $gray-800;
+
+// Links
+$link-color:                $menu-txt;
+$link-decoration:           none !default;
+$link-hover-color:          darken($link-color, 15%) !default;
+$link-hover-decoration:     underline !default;
+
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
+
+$enable-caret:                                true !default;
+$enable-rounded:                              true;
+$enable-shadows:                              false !default;
+$enable-gradients:                            false !default;
+$enable-transitions:                          true !default;
+$enable-prefers-reduced-motion-media-query:   true !default;
+$enable-hover-media-query:                    false !default; // Deprecated, no longer affects any compiled CSS
+$enable-grid-classes:                         true !default;
+$enable-pointer-cursor-for-buttons:           true !default;
+$enable-print-styles:                         true !default;
+$enable-responsive-font-sizes:                false !default;
+$enable-validation-icons:                     true !default;
+$enable-deprecation-messages:                 true !default;
+
+// Lokale Revisorer Theme Classes
+.primary-text-color {
+  color: $primary;
+}
+
+.custom-checkbox .custom-control-label::before {
+  border-radius: 0 !important;
+  width: 29px !important;
+  height: 30px !important;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+  width: 29px;
+  height: 30px;
+}
+
+.custom-checkbox .custom-control-input:checked ~
+.custom-control-label::after {
+  width: 29px;
+  height: 30px;
+}
+
+.custom-control-label::after {
+  width: 29px !important;
+  height: 30px !important;
+}
+
+$custom-control-indicator-checked-color:        $white;
+$custom-control-indicator-checked-bg:           $primary;

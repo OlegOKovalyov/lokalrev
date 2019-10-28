@@ -7,6 +7,9 @@
  * @package Lokal_Revisorer
  */
 
+add_filter('show_admin_bar', '__return_false'); // отключить
+//add_filter('show_admin_bar', '__return_true'); // включить
+
 if ( ! function_exists( 'lokalrev_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.

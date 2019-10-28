@@ -23,52 +23,34 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Normalize
+# Site Variables
+# Bootstrap 4.2.1
 # Typography
-# Elements
-# Forms
 # Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
 # Widgets
-# Content
-	## Posts and pages
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
 --------------------------------------------------------------*/
-// Custom.scss
-// Option: Include all of Bootstrap
-//@import "../node_modules/bootstrap/scss/bootstrap";
 
-// Custom.scss
-// Option B: Подключите весь Bootstrap
+/*--------------------------------------------------------------
+# Site Variables
+--------------------------------------------------------------*/
+@import "variables-site/variables-site";
 
-// Требуемое
+/*--------------------------------------------------------------
+# Bootstrap 4.2.1
+--------------------------------------------------------------*/
+// Required
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
 
-// Опциональное
 @import "../node_modules/bootstrap/scss/reboot";
 @import "../node_modules/bootstrap/scss/type";
 @import "../node_modules/bootstrap/scss/images";
 @import "../node_modules/bootstrap/scss/code";
 @import "../node_modules/bootstrap/scss/grid";
 @import "../node_modules/bootstrap/scss/buttons";
-
-@import "variables-site/variables-site";
-//@import "mixins/mixins-master";
-
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
-//@import "normalize";
+@import "../node_modules/bootstrap/scss/forms";
+@import "../node_modules/bootstrap/scss/custom-forms";
 
 /*--------------------------------------------------------------
 # Typography
@@ -76,51 +58,15 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "typography/typography";
 
 /*--------------------------------------------------------------
-# Elements
---------------------------------------------------------------*/
-//@import "elements/elements";
-
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-//@import "forms/forms";
-
-/*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 @import "navigation/navigation";
 
 /*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-//@import "modules/accessibility";
-
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
-//@import "modules/alignments";
-
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
-//@import "modules/clearings";
-
-/*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
 @import "site/secondary/widgets";
-
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-//@import "site/site";
-
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-//@import "modules/infinite-scroll";
-
-/*--------------------------------------------------------------
-# Media
---------------------------------------------------------------*/
-//@import "media/media";
+@import "site/site";

@@ -81,8 +81,9 @@ gulp.task('tinypng', function(cb) {
 // Обеспечиваем watching за scss-файлами
 gulp.task('watch', function() {
     browserSync.init({
-        files: ['./**/*.php'],
-        proxy: 'http://lokalrev.loc/',
+        // files: ['./**/*.php'],
+        // proxy: 'http://lokalrev.loc/',
+        proxy: 'lokalrev.loc',
     });
     gulp.watch('./sass/**/*.scss', ['sass', reload]);
     gulp.watch('./js/*.js', ['js', reload]);

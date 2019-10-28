@@ -1,4 +1,9 @@
-@import "colors";
-@import "typography";
-@import "structure";
-@import "columns";
+@font-face {
+  font-family: 'Sagona';
+  src: url("/wp-content/themes/lokalrev/fonts/Sagona.otf") format("opentype");
+  font-style: normal;
+}
+@import "colors-site";
+@import "typography-site";
+@import "structure-site";
+@import "components-site";

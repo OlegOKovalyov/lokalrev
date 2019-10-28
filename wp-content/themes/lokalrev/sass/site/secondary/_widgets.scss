@@ -10,7 +10,7 @@
 .site-footer {
 	background-color: #efefef;
 	color: #313433;
-	padding-top: 103px;
+	padding-top: 106px;
 	padding-bottom: 32px;
 
 	hr {
@@ -22,10 +22,14 @@
 }
 
 .first-row {
-	margin-bottom: 129px;
+	margin-bottom: 126px;
 
 	.widget_text {
 		opacity: 0.8;
+
+		&#text-8 {
+			padding-left: 11px;
+		}
 
 		h2 {
 			font-family: 'Domine', serif;
@@ -51,14 +55,14 @@
 			max-height: 467px;
 			position: absolute;
 			display: block;
-			right: -73px;
-			top: -86px;
+			right: -56px;
+			top: -84px;
 		}
 	}
 }
 
 .second-row {
-	margin-bottom: 22px;
+	margin-bottom: 21px;
 }
 
 .site-info {
@@ -66,7 +70,7 @@
 	opacity: 0.6;
 
 	p {
-		margin-top: 12px;
+		margin-top: 9px;
 	}
 }
 
