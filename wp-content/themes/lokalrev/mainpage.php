@@ -16,7 +16,7 @@ get_header();
             <!-- Hero Section -->
             <?php $hero = get_field('hero_section'); ?>
             <?php if( $hero ): ?>
-            <div class="jumbotron jumbotron-fluid" style="background: url(<?php echo esc_url($hero['hero_image']); ?>) no-repeat center top; background-size: cover;">
+            <div class="hero-block jumbotron jumbotron-fluid" style="background: url(<?php echo esc_url($hero['hero_image']); ?>) no-repeat center top; background-size: cover;">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-5">

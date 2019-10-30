@@ -27,37 +27,40 @@
 
 /* Mainpage */
 // Hero
-.jumbotron {
-	h1 {
-		padding-top: 146px;
-		padding-left: 56px;
-	}
+.hero-block {
+  margin-bottom: 0;
+  padding: 0 2rem;
 
-	p {
-		font-size: 20px;
-		letter-spacing: 0.15px;
-		line-height: 26px;
-		padding-top: 16px;
-		padding-left: 56px;
-		padding-bottom: 14px;
-		width: 430px;
-	}
+  h1 {
+      padding-top: 146px;
+      padding-left: 56px;
+  }
 
-	.hero-btn {
-      padding-left: 55px;
-      padding-bottom: 156px;
+  p {
+      font-size: 20px;
+      letter-spacing: 0.15px;
+      line-height: 26px;
+      padding-top: 16px;
+      padding-left: 56px;
+      padding-bottom: 14px;
+      width: 430px;
+  }
 
-      a {
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-	}
+  .hero-btn {
+    padding-left: 55px;
+    padding-bottom: 156px;
+
+    a {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
 }
 
 //Quote
 .quote-and-form {
   background: url(images/bg_quote.png) no-repeat 34% 0%;
-  height: 909px;
+  height: 911px;
   //background-size: 59.5%;
   background-size: contain;
 
@@ -110,7 +113,7 @@
   form {
     clip-path: polygon(0 43px, 100% 0, 100% 0, 100% 100%, 0 100%);
     background-color: $dark;
-    padding: 90px 55px 52px 57px;
+    padding: 93px 55px 52px 57px;
     position: absolute;
     top: -58px;
     left: 12px;
@@ -158,10 +161,12 @@
 
     input[type=submit].btn_form {
       border-radius: 36px;
+      padding-bottom: 39px;
+      letter-spacing: 0.8px;
       line-height: 0;
       margin-top: 85px;
-      padding-top: 36px;
-      padding-bottom: 38px;
+      margin-left: 23px;
+      padding-top: 37px;
     }
 
     p:last-child {
@@ -174,15 +179,16 @@
 .red-block {
   background: $red-txt url(images/bg_redblock.png) no-repeat 100% 0%;
   color: $white;
-  padding-top: 98px;
+  padding-top: 97px;
   padding-bottom: 118px;
 
   h2 {
+    color: $white;
     font-family: 'Domine', serif;
     font-size: 60px;
     font-weight: 400;
     line-height: 56px;
-    padding-left: 55px;
+    padding-left: 48px;
     padding-bottom: 92px;
   }
 
@@ -194,6 +200,7 @@
     }
 
     h4 {
+      color: $white;
       margin-bottom: 8px;
     }
 
@@ -245,6 +252,7 @@
 
         //p:first-child {
         h3 {
+          color: $white;
           font-family: 'Domine', sans-serif;
           font-size: 40px;
           font-weight: 400;
@@ -371,3 +379,34 @@
     }
   }
 }
+
+
+
+// Blogpage
+.blog-hero-block {
+  background: rgba(0, 0, 0, 0.85) url(images/bg_blogtop.png) no-repeat center center;
+  background-size: cover;
+
+  h1 {
+    color: $white !important;
+    padding-top: 51px;
+  }
+
+  .blog-search .input-group {
+    min-width: 340px;
+    padding-top: 25px;
+
+    .form-control {
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+    }
+
+    .input-group-append button {
+      background-color: $white;
+      border-left: none;
+      border-top-right-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+    }
+  }
+}
+

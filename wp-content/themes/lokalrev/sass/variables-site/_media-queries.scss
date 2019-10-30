@@ -40,6 +40,7 @@
         padding: 90px 25px 52px 25px;
       }
     }
+
     .slider-block {
       background: $gray-200 url(images/bg_tableup.png) no-repeat 230% 0;
       background-size: 89%;
@@ -50,6 +51,11 @@
         max-width: initial;
         margin-left: 0;
       }
+    }
+
+    .pink-block .list-wrap .text2 {
+      padding-left: 56px;
+      padding-right: 0;
     }
   }
 }
@@ -178,7 +184,7 @@
         padding-top: 100px;
       }
 
-      .text2 {
+      .list-wrap .text2 {
         padding-right: 0;
       }
     }

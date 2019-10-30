@@ -83,7 +83,7 @@ gulp.task('watch', function() {
     browserSync.init({
         // files: ['./**/*.php'],
         // proxy: 'http://lokalrev.loc/',
-        proxy: 'lokalrev.loc',
+        proxy: 'lokalrev.loc/blog',
     });
     gulp.watch('./sass/**/*.scss', ['sass', reload]);
     gulp.watch('./js/*.js', ['js', reload]);

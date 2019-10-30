@@ -59,6 +59,12 @@ $btn-link-disabled-color:     $gray-600 !default;
 $btn-block-spacing-y:         .5rem !default;
 
 
+// Allows for customizing button radius independently from global border radius
+//$btn-border-radius:           25px
+//$btn-border-radius-lg:        35px;
+//$btn-border-radius-sm:        20px;
+
+
 // Forms
 
 $label-margin-bottom:                   .625rem;
@@ -67,6 +73,13 @@ $input-border-radius-lg:                0;
 
 $input-padding-y-lg:                    1.9rem;
 $input-padding-x-lg:                    1rem;
-$form-group-margin-bottom:              0.6rem;
+$form-group-margin-bottom:              0.7rem;
 //$input-font-size-lg:                    $input-btn-font-size-lg !default;
 //$input-line-height-lg:                  $input-btn-line-height-lg !default;
+
+
+// Jumbotron
+
+$jumbotron-padding:                 0;
+$jumbotron-color:                   null;
+$jumbotron-bg:                      trasparent;
