@@ -118,6 +118,115 @@ $container-max-widths: (
         lg: 960px,
         xl: 1280px
 );*/
+@media (max-width: 1850px) {
+  .page-template-mainpage .slider-block {
+    background: #efefef url(images/bg_tableup.png) no-repeat 100% 0;
+    background-size: 100%;
+    padding-top: 80px;
+    height: 906px; } }
+
+@media (max-width: 1439px) {
+  .page-template-mainpage .jumbotron h1, .page-template-mainpage .jumbotron p, .page-template-mainpage .jumbotron .hero-btn {
+    padding-left: 0; }
+  .page-template-mainpage .quote-and-form {
+    background: url(images/bg_quote.png) no-repeat 0% 1%;
+    height: 969px;
+    background-size: cover; }
+    .page-template-mainpage .quote-and-form .blockquote-row {
+      padding-bottom: 50px; }
+    .page-template-mainpage .quote-and-form .blockquote {
+      padding-left: 10px; }
+    .page-template-mainpage .quote-and-form .blockquote:before {
+      top: 70px;
+      left: -15px; }
+    .page-template-mainpage .quote-and-form form {
+      left: 10px;
+      padding: 90px 25px 52px 25px; }
+  .page-template-mainpage .slider-block {
+    background: #efefef url(images/bg_tableup.png) no-repeat 230% 0;
+    background-size: 89%;
+    padding-top: 80px;
+    height: 850px; }
+    .page-template-mainpage .slider-block .white {
+      max-width: initial;
+      margin-left: 0; } }
+
+@media (max-width: 991px) {
+  .page-template-mainpage .quote-and-form {
+    background: url(images/bg_quote.png) no-repeat 0% 0%;
+    height: 1249px;
+    background-size: cover; }
+    .page-template-mainpage .quote-and-form .blockquote-row {
+      padding-bottom: 50px; }
+  .page-template-mainpage .red-block .col-icon p {
+    padding: 0; }
+  .page-template-mainpage .slider-block {
+    background-image: none;
+    height: 950px; }
+  .page-template-mainpage .pink-block {
+    padding-bottom: 100px; }
+    .page-template-mainpage .pink-block h2, .page-template-mainpage .pink-block p.text1 {
+      padding-left: 0; }
+    .page-template-mainpage .pink-block .list-wrap {
+      padding-top: 40px; }
+      .page-template-mainpage .pink-block .list-wrap .circles, .page-template-mainpage .pink-block .list-wrap .text2 {
+        padding-left: 0; } }
+
+@media (max-width: 767px) {
+  .page-template-mainpage .quote-and-form {
+    height: 1339px; }
+    .page-template-mainpage .quote-and-form .blockquote::before {
+      left: 12px; }
+    .page-template-mainpage .quote-and-form form input[type=submit].btn_form {
+      font-size: 16px; }
+  .page-template-mainpage .red-block {
+    padding-bottom: 0; }
+    .page-template-mainpage .red-block h2 {
+      font-size: 40px;
+      padding-left: 0; }
+    .page-template-mainpage .red-block .col-icon {
+      margin-bottom: 3rem; }
+  .page-template-mainpage .slider-block {
+    height: 1080px; }
+    .page-template-mainpage .slider-block h3.h3-title, .page-template-mainpage .slider-block p {
+      padding-left: 0; }
+    .page-template-mainpage .slider-block .white #slider_88 .sa_hover_container {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+
+@media (max-width: 575px) {
+  .page-template-mainpage .quote-and-form {
+    height: auto; }
+    .page-template-mainpage .quote-and-form form {
+      left: 0;
+      position: initial; }
+      .page-template-mainpage .quote-and-form form input[type=submit].btn_form {
+        font-size: 12px; }
+  .page-template-mainpage .slider-block {
+    height: auto; }
+    .page-template-mainpage .slider-block .white #slider_88 {
+      -webkit-clip-path: none;
+              clip-path: none;
+      position: initial; }
+  .page-template-mainpage .pink-block h2 {
+    padding-top: 100px; }
+  .page-template-mainpage .pink-block .text2 {
+    padding-right: 0; } }
+
+@media (max-width: 480px) {
+  .page-template-mainpage form input[type=submit].btn_form {
+    font-size: 14px; } }
+
+@media (min-width: 1440px) {
+  .page-template-mainpage .slider-block {
+    background-size: 70%; } }
+
+@media (min-width: 1600px) {
+  .page-template-mainpage .slider-block {
+    background-size: 50.25%; } }
+
 /*--------------------------------------------------------------
 # Bootstrap 4.2.1
 --------------------------------------------------------------*/
@@ -2955,13 +3064,18 @@ big {
     padding-top: 130px;
     width: 100%; }
   header.open .main-navigation li {
-    margin-left: 0; }
+    margin-left: 0;
+    z-index: 1; }
   header.open .main-navigation li:last-child a {
-    font-size: 18px; }
+    background-color: #e94857;
+    font-size: 18px;
+    text-shadow: none; }
   header.open .main-navigation a {
-    color: #e94857;
-    font-size: 30px;
-    margin-bottom: 50px; }
+    font-size: 50px;
+    color: #fff;
+    background: transparent;
+    margin-bottom: 50px;
+    text-shadow: 0 0 10px #fff; }
   .toggle-menu {
     position: absolute;
     top: 33px;
@@ -3033,7 +3147,7 @@ big {
       max-height: 467px;
       position: absolute;
       display: block;
-      right: -56px;
+      right: -52px;
       top: -84px; }
 
 .second-row {
@@ -3086,10 +3200,14 @@ big {
 .jumbotron .hero-btn {
   padding-left: 55px;
   padding-bottom: 156px; }
+  .jumbotron .hero-btn a {
+    padding-left: 10px;
+    padding-right: 10px; }
 
 .quote-and-form {
-  background: url(images/bg_quote.png) no-repeat 33% 0%;
-  height: 879px; }
+  background: url(images/bg_quote.png) no-repeat 34% 0%;
+  height: 909px;
+  background-size: contain; }
   .quote-and-form .blockquote {
     color: #a1343c;
     max-width: 450px;
@@ -3142,10 +3260,11 @@ big {
     color: #fff;
     width: 100%; }
   .quote-and-form form label.custom-control-label {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     padding-left: 20px;
     padding-top: 6px;
-    letter-spacing: 0.9px; }
+    letter-spacing: 0.9px;
+    text-align: left; }
   .quote-and-form form .form-group.custom-control br {
     display: none; }
   .quote-and-form form .form-group-text p {
@@ -3160,7 +3279,7 @@ big {
   .quote-and-form form input[type=submit].btn_form {
     border-radius: 36px;
     line-height: 0;
-    margin-top: 75px;
+    margin-top: 85px;
     padding-top: 36px;
     padding-bottom: 38px; }
   .quote-and-form form p:last-child {
@@ -3169,7 +3288,7 @@ big {
 .red-block {
   background: #a1343c url(images/bg_redblock.png) no-repeat 100% 0%;
   color: #fff;
-  padding-top: 127px;
+  padding-top: 98px;
   padding-bottom: 118px; }
   .red-block h2 {
     font-family: 'Domine', serif;
@@ -3190,7 +3309,8 @@ big {
       padding: 0 30px; }
 
 .slider-block {
-  background: #efefef url(images/bg_tableup.png) no-repeat 74% 0;
+  background: #efefef url(images/bg_tableup.png) no-repeat 73% 0;
+  background-size: 50.25%;
   padding-top: 80px;
   height: 906px; }
   .slider-block h3 {
@@ -3226,7 +3346,7 @@ big {
           font-size: 40px;
           font-weight: 400;
           line-height: 46px;
-          max-width: 285px;
+          max-width: 311px;
           width: 100%;
           border-right: 2px solid #a1343c;
           -ms-flex-negative: 0;
@@ -3238,7 +3358,7 @@ big {
           font-size: 14px;
           font-weight: 400;
           line-height: 19px;
-          padding-left: 56px;
+          padding-left: 28px;
           padding-top: 41px;
           padding-right: 41px; }
 
@@ -3267,7 +3387,43 @@ big {
   right: 29px; }
 
 .pink-block {
-  background-color: #f5dcde; }
+  background-color: #f5dcde;
+  padding-bottom: 106px; }
+  .pink-block h2 {
+    color: #a1343c;
+    font-family: 'Domine', serif;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 58px;
+    padding-top: 187px;
+    padding-left: 56px; }
+  .pink-block p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 25px;
+    padding-top: 34px;
+    padding-left: 62px;
+    letter-spacing: -0.05px; }
+  .pink-block .list-wrap {
+    padding-top: 199px; }
+    .pink-block .list-wrap .circles {
+      letter-spacing: -0.55px;
+      padding-top: 3px;
+      padding-left: 54px;
+      line-height: 24px;
+      padding-bottom: 10px; }
+      .pink-block .list-wrap .circles.last-p {
+        padding-bottom: 0; }
+    .pink-block .list-wrap .circles:before {
+      color: #a1343c;
+      content: ' \25CF';
+      font-size: 32px;
+      padding-right: 25px; }
+    .pink-block .list-wrap .text2 {
+      padding-left: 96px;
+      line-height: 23px;
+      padding-right: 50px;
+      letter-spacing: -0.5px; }
 
 /*--------------------------------------------------------------
 ## Comments

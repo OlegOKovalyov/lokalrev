@@ -138,16 +138,23 @@
 
       li {
         margin-left: 0;
+        z-index: 1;
       }
 
       li:last-child a {
+        background-color: $primary;
+        //color: $primary;
         font-size: 18px;
+        text-shadow: none;
       }
 
       a {
-        color: $primary;
-        font-size: 30px;
+        //color: $primary;
+        font-size: 50px;
+        color: $white;
+        background: transparent;
         margin-bottom: 50px;
+        text-shadow: 0 0 10px $white;
       }
     }
   }

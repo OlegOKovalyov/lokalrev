@@ -44,16 +44,22 @@
 	}
 
 	.hero-btn {
-		padding-left: 55px;
-		padding-bottom: 156px;
+      padding-left: 55px;
+      padding-bottom: 156px;
+
+      a {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
 	}
 }
 
 //Quote
 .quote-and-form {
-  background: url(images/bg_quote.png) no-repeat 33% 0%;
-  //background: url(images/bg_quote.png) no-repeat 265px 23px;
-  height: 879px;
+  background: url(images/bg_quote.png) no-repeat 34% 0%;
+  height: 909px;
+  //background-size: 59.5%;
+  background-size: contain;
 
   .blockquote {
     color: #a1343c;
@@ -122,10 +128,11 @@
     }
 
     label.custom-control-label {
-      margin-bottom: 1rem;
+      margin-bottom: 0;
       padding-left: 20px;
       padding-top: 6px;
       letter-spacing: 0.9px;
+      text-align: left;
     }
 
     .form-group.custom-control {
@@ -152,7 +159,7 @@
     input[type=submit].btn_form {
       border-radius: 36px;
       line-height: 0;
-      margin-top: 75px;
+      margin-top: 85px;
       padding-top: 36px;
       padding-bottom: 38px;
     }
@@ -167,7 +174,7 @@
 .red-block {
   background: $red-txt url(images/bg_redblock.png) no-repeat 100% 0%;
   color: $white;
-  padding-top: 127px;
+  padding-top: 98px;
   padding-bottom: 118px;
 
   h2 {
@@ -200,7 +207,8 @@
 
 // SLider Section
 .slider-block {
-  background: #efefef url(images/bg_tableup.png) no-repeat 74% 0;
+  background: $gray-200 url(images/bg_tableup.png) no-repeat 73% 0;
+  background-size: 50.25%;
   padding-top: 80px;
   height: 906px;
 
@@ -241,7 +249,8 @@
           font-size: 40px;
           font-weight: 400;
           line-height: 46px;
-          max-width: 285px;
+          //max-width: 285px;
+          max-width: 311px;
           width: 100%;
           border-right: 2px solid $red-txt;
           //flex-grow: 2;
@@ -256,7 +265,7 @@
           font-size: 14px;
           font-weight: 400;
           line-height: 19px;
-          padding-left: 56px;
+          padding-left: 28px;
           padding-top: 41px;
           padding-right: 41px;
         }
@@ -311,4 +320,54 @@
 // Pink Block
 .pink-block {
   background-color: $pink;
+  padding-bottom: 106px;
+
+  h2 {
+    color: $red-txt;
+    font-family: 'Domine', serif;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 58px;
+    padding-top: 187px;
+    padding-left: 56px;
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 25px;
+    padding-top: 34px;
+    padding-left: 62px;
+    letter-spacing: -0.05px;
+  }
+
+  .list-wrap {
+    padding-top: 199px;
+
+    .circles {
+      letter-spacing: -0.55px;
+      padding-top: 3px;
+      padding-left: 54px;
+      line-height: 24px;
+      padding-bottom: 10px;
+
+      &.last-p {
+        padding-bottom: 0;
+      }
+    }
+
+    .circles:before {
+      color: $red-txt;
+      content: ' \25CF';
+      font-size: 32px;
+      padding-right: 25px;
+    }
+
+    .text2 {
+      padding-left: 96px;
+      line-height: 23px;
+      padding-right: 50px;
+      letter-spacing: -0.5px;
+    }
+  }
 }
