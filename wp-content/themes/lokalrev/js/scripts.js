@@ -4,6 +4,7 @@ $(document).ready(function(){
         jQuery('.toggle-menu').click(function(){
             jQuery('header').toggleClass('open');
             jQuery('body').toggleClass('menu-open');
+            jQuery('.hero-block').toggleClass('bg-blur');
         });
     });
 

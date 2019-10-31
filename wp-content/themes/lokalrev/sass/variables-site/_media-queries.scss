@@ -78,14 +78,8 @@
     }
 
     .slider-block {
-      //background: #efefef url(images/bg_tableup.png) no-repeat 0 -300%;
-      //background-size: cover;
       background-image: none;
       height: 950px;
-    }
-
-    .slider-block .white #slider_88 {
-      //margin-left: -25px;
     }
 
     .pink-block {
@@ -133,10 +127,6 @@
 
       .col-icon {
         margin-bottom: 3rem;
-        //padding-left: 10px;
-        //padding-right: 10px;
-        //margin-left: 0;
-        //margin-right: 0;
       }
     }
 
@@ -166,6 +156,8 @@
 
         input[type="submit"].btn_form {
           font-size: 12px;
+          padding: 30px 5px;
+          margin-left: 0;
         }
       }
     }

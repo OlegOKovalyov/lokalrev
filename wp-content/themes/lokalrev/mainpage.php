@@ -16,10 +16,10 @@ get_header();
             <!-- Hero Section -->
             <?php $hero = get_field('hero_section'); ?>
             <?php if( $hero ): ?>
-            <div class="hero-block jumbotron jumbotron-fluid" style="background: url(<?php echo esc_url($hero['hero_image']); ?>) no-repeat center top; background-size: cover;">
+            <div class="hero-block hero_blur jumbotron jumbotron-fluid" style="background: url(<?php echo esc_url($hero['hero_image']); ?>) no-repeat center top; background-size: cover;">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-5">
+                        <div class="col-xl-5 col-lg-5 col-md-12">
                             <h1><?php echo $hero['hero_h1']; ?></h1>
                             <?php echo $hero['hero_text']; ?>
                             <div class="hero-btn">
@@ -57,28 +57,26 @@ get_header();
             <?php if( $red_section ): ?>
             <div class="red-block">
                 <div class="container">
-<!--                    <div class="row">-->
-                        <div class="col-lg-10">
-                            <h2><?php echo $red_section['title']; ?></h2>
+                    <div class="col-lg-10">
+                        <h2><?php echo $red_section['title']; ?></h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-icon">
+                            <img class="i-image" src="<?php echo $red_section['icon1'] ?>" alt="">
+                            <h4><?php echo $red_section['title_1'] ?></h4>
+                            <p><?php echo $red_section['text_1'] ?></p>
                         </div>
-                        <div class="row">
-                            <div class="col-md-4 col-icon">
-                                <img class="i-image" src="<?php echo $red_section['icon1'] ?>" alt="">
-                                <h4><?php echo $red_section['title_1'] ?></h4>
-                                <p><?php echo $red_section['text_1'] ?></p>
-                            </div>
-                            <div class="col-md-4 col-icon">
-                                <img class="i-image" src="<?php echo $red_section['icon2'] ?>" alt="">
-                                <h4><?php echo $red_section['title_2'] ?></h4>
-                                <p><?php echo $red_section['text_2'] ?></p>
-                            </div>
-                            <div class="col-md-4 col-icon">
-                                <img class="i-image" src="<?php echo $red_section['icon3'] ?>" alt="">
-                                <h4><?php echo $red_section['title_3'] ?></h4>
-                                <p><?php echo $red_section['text_3'] ?></p>
-                            </div>
+                        <div class="col-md-4 col-icon">
+                            <img class="i-image" src="<?php echo $red_section['icon2'] ?>" alt="">
+                            <h4><?php echo $red_section['title_2'] ?></h4>
+                            <p><?php echo $red_section['text_2'] ?></p>
                         </div>
-<!--                    </div>-->
+                        <div class="col-md-4 col-icon">
+                            <img class="i-image" src="<?php echo $red_section['icon3'] ?>" alt="">
+                            <h4><?php echo $red_section['title_3'] ?></h4>
+                            <p><?php echo $red_section['text_3'] ?></p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <?php endif; ?>
@@ -112,11 +110,11 @@ get_header();
                         </div>
                         <div class="offset-lg-1 col-lg-6 col-md-12">
                             <div class="list-wrap">
-                                <p class="circles"><?php echo $pink_section['list1']; ?></p>
-                                <p class="circles"><?php echo $pink_section['list2']; ?></p>
-                                <p class="circles"><?php echo $pink_section['list3']; ?></p>
-                                <p class="circles"><?php echo $pink_section['list4']; ?></p>
-                                <p class="circles last-p"><?php echo $pink_section['list5']; ?></p>
+                                <div class="list-circles div1"><p class="circles1"></p><p class="circles"><?php echo $pink_section['list1']; ?></p></div>
+                                <div class="list-circles div2"><p class="circles2"></p><p class="circles"><?php echo $pink_section['list2']; ?></p></div>
+                                <div class="list-circles div3"><p class="circles3"></p><p class="circles"><?php echo $pink_section['list3']; ?></p></div>
+                                <div class="list-circles div4"><p class="circles4"></p><p class="circles"><?php echo $pink_section['list4']; ?></p></div>
+                                <div class="list-circles div5"><p class="circles5"></p><p class="circles"><?php echo $pink_section['list5']; ?></p></div>
                                 <p class="text2"><?php echo $pink_section['text2']; ?></p>
                             </div>
                         </div>

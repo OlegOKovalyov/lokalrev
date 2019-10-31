@@ -85,14 +85,12 @@
 	}
 }
 
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-}
-
 
 @media screen and (max-width: 991px) {
+  .bg-blur {
+    filter: blur(12px);
+  }
+
   .site-branding {
     margin: auto 0;
   }
@@ -143,18 +141,16 @@
 
       li:last-child a {
         background-color: $primary;
-        //color: $primary;
         font-size: 18px;
         text-shadow: none;
       }
 
       a {
-        //color: $primary;
         font-size: 50px;
         color: $white;
         background: transparent;
         margin-bottom: 50px;
-        text-shadow: 0 0 10px $white;
+        text-shadow: 0 0 10px $dark;
       }
     }
   }
@@ -191,24 +187,3 @@
       display: block;
   }
 }
-
-//.comment-navigation,
-//.posts-navigation,
-//.post-navigation {
-//
-//	.site-main & {
-//		margin: 0 0 1.5em;
-//		overflow: hidden;
-//	}
-//
-//	.nav-previous {
-//		float: left;
-//		width: 50%;
-//	}
-//
-//	.nav-next {
-//		float: right;
-//		text-align: right;
-//		width: 50%;
-//	}
-//}
