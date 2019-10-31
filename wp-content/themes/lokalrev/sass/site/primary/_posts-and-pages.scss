@@ -412,19 +412,36 @@
 .blog-hero-block {
   background: rgba(0, 0, 0, 0.85) url(images/bg_blogtop.png) no-repeat center center;
   background-size: cover;
+  color: $white; // Временно!!!!
 
   h1 {
     color: $white !important;
-    padding-top: 51px;
+    margin-bottom: 0;
+    padding-top: 45px;
+    padding-left: 6px;
   }
 
-  .blog-search .input-group {
-    min-width: 340px;
-    padding-top: 25px;
+  .blog-search > .input-group {
+    max-width: 390px;
+    padding-top: 49px;
+    padding-left: 37px;
 
     .form-control {
       border-top-left-radius: 0.5rem;
       border-bottom-left-radius: 0.5rem;
+      font-weight: 400;
+      line-height: 46px;
+      height: 49px;
+
+      &::placeholder  {
+        opacity: 0.6;
+        color: #272222;
+        //font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 46px;
+        padding-left: 9px;
+      }
     }
 
     .input-group-append button {
@@ -432,6 +449,43 @@
       border-left: none;
       border-top-right-radius: 0.5rem;
       border-bottom-right-radius: 0.5rem;
+    }
+  }
+}
+
+// Cards
+.card-block {
+
+  .container {
+    display: flex;
+    align-items: flex-start;
+
+    .cats-btns {
+      a {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      a:first-child {
+        width: 134px;
+      }
+    }
+  }
+
+  .card-props {
+    display: flex;
+    justify-content: space-between;
+
+    .entry-date {
+      color: $white;
+      background-color: $red-date;
+    }
+
+    .entry-date-day {
+      font-family: "Domine", serif;
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 42px;
     }
   }
 }

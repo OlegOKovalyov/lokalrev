@@ -18,10 +18,10 @@ $input-btn-line-height-lg:    $line-height-lg !default;
 
 $input-btn-border-width:      $border-width !default;
 
-// Buttons (??????)
-$btn-padding-y:               $input-btn-padding-y !default;
-$btn-padding-x:               $input-btn-padding-x !default;
-$btn-line-height:             $input-btn-line-height !default;
+// Buttons
+$btn-padding-y:               15px;
+$btn-padding-x:               15px;
+$btn-line-height:             16px;
 
 $btn-padding-y-sm:            $input-btn-padding-y-sm !default;
 $btn-padding-x-sm:            $input-btn-padding-x-sm !default;
@@ -46,7 +46,7 @@ $btn-block-spacing-y:         .5rem !default;
 
 
 // Allows for customizing button radius independently from global border radius
-//$btn-border-radius:           25px
+$btn-border-radius:           23px;
 $btn-border-radius-lg:        35px;
 //$btn-border-radius-sm:        20px;
 
