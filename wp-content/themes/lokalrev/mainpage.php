@@ -16,7 +16,7 @@ get_header();
             <!-- Hero Section -->
             <?php $hero = get_field('hero_section'); ?>
             <?php if( $hero ): ?>
-            <div class="hero-block hero_blur jumbotron jumbotron-fluid" style="background: url(<?php echo esc_url($hero['hero_image']); ?>) no-repeat center top; background-size: cover;">
+            <div class="hero-block hero-blur jumbotron jumbotron-fluid" style="background: url(<?php echo esc_url($hero['hero_image']); ?>) no-repeat center top; background-size: cover;">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-5 col-lg-5 col-md-12">
@@ -142,5 +142,4 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
-//get_sidebar();
 get_footer();
