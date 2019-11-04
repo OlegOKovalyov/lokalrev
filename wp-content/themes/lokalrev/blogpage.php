@@ -121,7 +121,9 @@ get_header();
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <?php the_post_thumbnail( array(368,208) ); ?>
+                                    <a href="<?php echo get_permalink($post->ID) ?>">
+                                        <?php the_post_thumbnail( array(368,208) ); ?>
+                                    </a>
                                     <p class="card-text"><?php the_excerpt(); ?></p>
                                     <?php $terms = get_the_terms( $post->ID, 'category' ); ?>
                                     <div class="cat-word-link">
@@ -129,7 +131,7 @@ get_header();
                                         <a href="#" class="btn btn-link"><?php echo $terms[0]->name; ?></a>
                                     </div>
                                 </div>
-                            </div>
+                            </div><!-- .card -->
                         </div>
                         <?php
                         }
@@ -137,7 +139,7 @@ get_header();
                         ?>
                     </div><!-- .row -->
                 </div>
-            </div>
+            </div><!-- .card-block -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
