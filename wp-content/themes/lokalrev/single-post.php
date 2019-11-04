@@ -17,7 +17,7 @@ get_header();
         <?php global $post; setup_postdata($post);  ?>
 
             <!-- Single Blog Hero Section -->
-            <div class="single-blog-hero-block hero-blur">
+            <div class="single-blog-block hero-blur">
                 <header class="entry-header">
                     <div class="jumbotron jumbotron-fluid">
                         <div class="container">

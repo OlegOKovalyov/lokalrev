@@ -729,7 +729,7 @@
 
 
 // Single Blog Post Template
-.single-blog-hero-block {
+.single-blog-block {
   .jumbotron {
     background-color: #e94c5a;
   }
@@ -742,7 +742,7 @@
   }
 }
 
-.single-blog-props {
+.single-blog-block .single-blog-props {
   .card-props {
     display: flex;
     justify-content: space-between;
@@ -805,7 +805,7 @@
   }
 }
 
-.cat-word-link {
+.single-blog-block .cat-word-link {
   color: $white;
 
   .cat-word + a {
@@ -820,7 +820,7 @@
   background-color: $gray-200;
 }
 
-.entry-content {
+.single-blog-block .entry-content {
   background-color: $white;
   padding: 37px 30px 36px 30px;
 

@@ -12041,16 +12041,16 @@ big {
   .card-block .container .card {
     min-width: auto; } }
 
-.single-blog-hero-block .jumbotron {
+.single-blog-block .jumbotron {
   background-color: #e94c5a; }
 
-.single-blog-hero-block h1 {
+.single-blog-block h1 {
   color: #ffffff;
   font-size: 50px;
   font-weight: 400;
   line-height: 50px; }
 
-.single-blog-props .card-props {
+.single-blog-block .single-blog-props .card-props {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12059,7 +12059,7 @@ big {
           justify-content: space-between;
   margin-top: 30px;
   padding-bottom: 15px; }
-  .single-blog-props .card-props .entry-date {
+  .single-blog-block .single-blog-props .card-props .entry-date {
     color: #fff;
     background-color: #a74047;
     height: 74px;
@@ -12068,7 +12068,7 @@ big {
     padding: 18px 15px 15px 17px;
     position: relative;
     text-align: center; }
-    .single-blog-props .card-props .entry-date:after {
+    .single-blog-block .single-blog-props .card-props .entry-date:after {
       content: '';
       position: absolute;
       top: 88%;
@@ -12078,36 +12078,36 @@ big {
       border-style: solid;
       border-width: 17px 16px 20px 0;
       border-color: #a1343c transparent transparent #a1343c; }
-    .single-blog-props .card-props .entry-date .entry-date-day {
+    .single-blog-block .single-blog-props .card-props .entry-date .entry-date-day {
       font-family: "Domine", serif;
       font-size: 36px;
       font-weight: 600;
       line-height: 20px; }
-    .single-blog-props .card-props .entry-date .entry-date-month {
+    .single-blog-block .single-blog-props .card-props .entry-date .entry-date-month {
       line-height: 33px; }
 
-.single-blog-props .entry-author-avatar {
+.single-blog-block .single-blog-props .entry-author-avatar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
-  .single-blog-props .entry-author-avatar span:first-child {
+  .single-blog-block .single-blog-props .entry-author-avatar span:first-child {
     font-size: 14px;
     font-weight: 400;
     line-height: 34px;
     color: #9a9a9a;
     margin-top: 10px;
     margin-right: 13px; }
-  .single-blog-props .entry-author-avatar img {
+  .single-blog-block .single-blog-props .entry-author-avatar img {
     border-radius: 50%;
     height: 55px;
     width: 54px; }
 
-.cat-word-link {
+.single-blog-block .cat-word-link {
   color: #fff; }
-  .cat-word-link .cat-word + a {
+  .single-blog-block .cat-word-link .cat-word + a {
     color: #fff;
     font-size: 14px;
     font-weight: 400;
@@ -12116,28 +12116,28 @@ big {
 .entry-container-sidebar {
   background-color: #efefef; }
 
-.entry-content {
+.single-blog-block .entry-content {
   background-color: #fff;
   padding: 37px 30px 36px 30px; }
-  .entry-content p {
+  .single-blog-block .entry-content p {
     color: #2b2626;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px; }
-    .entry-content p a {
+    .single-blog-block .entry-content p a {
       color: #f49200;
       font-weight: 400; }
-  .entry-content h2 {
+  .single-blog-block .entry-content h2 {
     font-size: 26px;
     font-weight: 300; }
-  .entry-content blockquote p:first-child {
+  .single-blog-block .entry-content blockquote p:first-child {
     color: #2b2626;
     font-size: 30px;
     font-weight: 300;
     line-height: 36px; }
-  .entry-content blockquote p:nth-child(2) {
+  .single-blog-block .entry-content blockquote p:nth-child(2) {
     font-size: 18px; }
-  .entry-content blockquote a {
+  .single-blog-block .entry-content blockquote a {
     color: #e94c5a;
     font-size: 18px;
     font-weight: 400; }
