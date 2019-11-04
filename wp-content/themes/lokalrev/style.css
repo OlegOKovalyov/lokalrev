@@ -11783,6 +11783,14 @@ big {
       padding-right: 50px;
       letter-spacing: -0.5px; }
 
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: #e94857;
+  background-color: #efefef;
+  border-color: #efefef; }
+  .btn-primary:not(:disabled):not(.disabled):active img, .btn-primary:not(:disabled):not(.disabled).active img, .show > .btn-primary.dropdown-toggle img {
+    background: url(images/i-eye-red.png) no-repeat center center; }
+
 .blog-hero-block {
   background: rgba(0, 0, 0, 0.85) url(images/bg_blogtop.png) no-repeat center center;
   background-size: cover;
@@ -11797,45 +11805,33 @@ big {
     max-width: 390px;
     padding-top: 49px;
     padding-left: 37px; }
+    .blog-hero-block .blog-search > .input-group form {
+      display: inherit;
+      width: 100%; }
     .blog-hero-block .blog-search > .input-group .form-control {
       border-top-left-radius: 0.5rem;
       border-bottom-left-radius: 0.5rem;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
       font-weight: 400;
       line-height: 46px;
       height: 49px; }
-      .blog-hero-block .blog-search > .input-group .form-control::-webkit-input-placeholder {
+      .blog-hero-block .blog-search > .input-group .form-control:placeholder {
         opacity: 0.6;
         color: #272222;
         font-size: 16px;
         font-weight: 400;
         line-height: 46px;
         padding-left: 2px; }
-      .blog-hero-block .blog-search > .input-group .form-control::-moz-placeholder {
-        opacity: 0.6;
-        color: #272222;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 46px;
-        padding-left: 2px; }
-      .blog-hero-block .blog-search > .input-group .form-control::-ms-input-placeholder {
-        opacity: 0.6;
-        color: #272222;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 46px;
-        padding-left: 2px; }
-      .blog-hero-block .blog-search > .input-group .form-control::placeholder {
-        opacity: 0.6;
-        color: #272222;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 46px;
-        padding-left: 2px; }
+      .blog-hero-block .blog-search > .input-group .form-control:focus {
+        background-color: #fff; }
     .blog-hero-block .blog-search > .input-group .input-group-append button {
       background-color: #fff;
       border-left: none;
       border-top-right-radius: 0.5rem;
-      border-bottom-right-radius: 0.5rem; }
+      border-bottom-right-radius: 0.5rem;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0; }
   .blog-hero-block .cats-btns {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -11843,9 +11839,9 @@ big {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     margin-left: -10px; }
-    .blog-hero-block .cats-btns a:first-child {
+    .blog-hero-block .cats-btns label:first-child {
       min-width: 138px; }
-    .blog-hero-block .cats-btns a {
+    .blog-hero-block .cats-btns label {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -11856,12 +11852,14 @@ big {
               justify-content: space-between;
       margin-right: 8px;
       min-width: 193px; }
-      .blog-hero-block .cats-btns a:hover {
-        color: #e94857;
-        background-color: #efefef;
+      .blog-hero-block .cats-btns label:hover, .blog-hero-block .cats-btns label:focus {
+        color: #fff;
+        background-color: #ed6874;
         border-color: #e31b2e; }
-        .blog-hero-block .cats-btns a:hover img {
+        .blog-hero-block .cats-btns label:hover img, .blog-hero-block .cats-btns label:focus img {
           background: url(images/i-eye-red.png) no-repeat center center; }
+      .blog-hero-block .cats-btns label input {
+        display: none; }
 
 .card-block {
   background-color: #efefef;
@@ -11876,7 +11874,7 @@ big {
     padding-left: 0;
     padding-right: 0; }
     .card-block .container .row {
-      margin-top: -139px; }
+      margin-top: -149px; }
     .card-block .container .card-wrap {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -11884,7 +11882,7 @@ big {
       -webkit-box-align: stretch;
           -ms-flex-align: stretch;
               align-items: stretch;
-      margin-bottom: 23px; }
+      margin-bottom: 25px; }
     .card-block .container .card {
       border: none;
       border-radius: 0;
@@ -11910,19 +11908,44 @@ big {
         margin-top: -17px;
         margin-left: 5px;
         min-width: 76px;
-        padding: 18px 15px 15px 17px; }
+        padding: 18px 15px 15px 17px;
+        position: relative;
+        text-align: center; }
+        .card-block .container .card-props .entry-date:after {
+          content: '';
+          position: absolute;
+          top: 88%;
+          left: 0;
+          width: 10px;
+          height: 10px;
+          border-style: solid;
+          border-width: 17px 16px 20px 0;
+          border-color: #a1343c transparent transparent #a1343c; }
         .card-block .container .card-props .entry-date .entry-date-day {
           font-family: "Domine", serif;
           font-size: 36px;
           font-weight: 600;
           line-height: 20px; }
         .card-block .container .card-props .entry-date .entry-date-month {
-          line-height: 33px;
-          text-align: center; }
-    .card-block .container .entry-author-avatar img {
-      border-radius: 50%;
-      height: 55px;
-      width: 54px; }
+          line-height: 33px; }
+    .card-block .container .entry-author-avatar {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      .card-block .container .entry-author-avatar span:first-child {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 34px;
+        color: #9a9a9a;
+        margin-top: 10px;
+        margin-right: 13px; }
+      .card-block .container .entry-author-avatar img {
+        border-radius: 50%;
+        height: 55px;
+        width: 54px; }
     .card-block .container .card-title h5 {
       color: #272222;
       font-size: 30px;
@@ -11948,7 +11971,7 @@ big {
       .card-block .container .card-body img {
         width: 100%;
         height: auto;
-        margin-bottom: 12px; }
+        margin-bottom: -18px; }
       .card-block .container .card-body .card-text {
         color: #272222;
         font-size: 16px;
@@ -11960,26 +11983,41 @@ big {
         font-size: 14px;
         font-weight: 400;
         padding-left: 0; }
+      .card-block .container .card-body p {
+        margin-bottom: 8px; }
 
 @media (max-width: 1439px) {
   .card-block .container .card {
     min-width: auto; } }
 
 @media (max-width: 991px) {
+  .blog-hero-block {
+    padding-bottom: 165px; }
+  .blog-hero-block h1 {
+    font-size: 40px;
+    padding-left: 0; }
+  .blog-hero-block .blog-search > .input-group .form-control {
+    line-height: 40px;
+    height: 45px; }
   .blog-hero-block .cats-btns {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -ms-flex-pack: distribute;
-        justify-content: space-around; }
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-left: 0; }
     .blog-hero-block .cats-btns a {
-      margin-bottom: 30px; }
+      margin-bottom: 8px; }
   .card-block .container .row {
     margin-left: 0;
     margin-right: 0; }
   .card-block .container .card {
     margin-bottom: 185px;
-    margin-bottom: 23px; }
+    margin-bottom: 23px;
+    margin-left: 10px;
+    margin-right: 10px;
+    min-width: 340px; }
   .card-block .container .card-wrap {
     padding-left: 0;
     padding-right: 0; } }
@@ -11991,12 +12029,17 @@ big {
 
 @media (max-width: 575px) {
   .blog-hero-block h1 {
+    font-size: 30px;
     padding-bottom: 10px; }
   .blog-hero-block .blog-search > .input-group {
     max-width: unset;
     padding-top: 20px;
     padding-left: 0;
     padding-bottom: 35px; } }
+
+@media (max-width: 380px) {
+  .card-block .container .card {
+    min-width: auto; } }
 
 /*--------------------------------------------------------------
 ## Comments

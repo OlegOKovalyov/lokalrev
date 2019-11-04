@@ -41,14 +41,14 @@ get_header();
                             </div>
                             <div class="blog-search offset-lg-2 col-lg-4 col-md-6 col-sm-6">
                                 <div class="input-group">
-                                    <div class="input-group">
-                                        <input class="form-control border-secondary" type="search" value="" placeholder="Søgeord">
+                                    <form action="<?php bloginfo( 'url' ); ?>" method="get">
+                                        <input class="form-control border-secondary" type="search" name="s" placeholder="Søgeord" value="<?php if(!empty($_GET['s'])){echo $_GET['s'];}?>"/>
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button">
+                                            <button class="btn btn-outline-secondary" type="submit">
                                                 <img src="<?php echo get_template_directory_uri(); ?>/images/i-search.png" alt="Icon Search">
                                             </button>
                                         </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div><!-- .row -->
@@ -63,26 +63,26 @@ get_header();
 
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="cats-btns">
+                                <div class="cats-btns" data-toggle="buttons">
                                     <?php
                                     $cat_slugs = get_terms( array(
                                         'taxonomy'    => 'category',
                                         'orderby'     => 'term_id',
                                     )   );
-                                    $output = '';
+                                    $chkbxout = '';
                                     foreach ( $cat_slugs as $cat_slug) {
                                         if ( $cat_slug->term_id != 1 ) {
-                                            $output .= '<a href="';
-                                            $output .= $cat_slug->slug;
-                                            $output .= '" class="btn btn-primary">';
-                                            $output .= '<span>' . $cat_slug->name . '</span>';
-                                            $output .= '<img src="';
-                                            $output .= get_template_directory_uri() . '/images/i-eye.png';
-                                            $output .= '" alt="Eye Icon">';
-                                            $output .= '</a>';
+                                            $chkbxout .= '<label class="btn btn-primary">';
+                                            $chkbxout .= '<input type="checkbox" name="selection[]" value="';
+                                            $chkbxout .= $cat_slug->term_id;
+                                            $chkbxout .= '" class="checkbox-select">';
+                                            $chkbxout .= '<span>' . $cat_slug->name . '</span>';
+                                            $chkbxout .= '<img src="';
+                                            $chkbxout .= get_template_directory_uri() . '/images/i-eye.png';
+                                            $chkbxout .= '" alt="Eye Icon"></label>';
                                         }
                                     }
-                                    echo $output;
+                                   echo $chkbxout;
                                     ?>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@ get_header();
                     foreach( $cats_posts as $post ){
                         setup_postdata( $post ); ?>
 
-                        <div class="card-wrap col-lg-4">
+                        <div class="card-wrap col-lg-4 col-md-6 col-sm-12">
                             <div class="card">
                                 <div class="card-header">
                                     <div class="card-props">
@@ -122,6 +122,7 @@ get_header();
                                 </div>
                                 <div class="card-body">
                                     <?php the_post_thumbnail( array(368,208) ); ?>
+                                    <p class="card-text"><?php the_excerpt(); ?></p>
                                     <?php $terms = get_the_terms( $post->ID, 'category' ); ?>
                                     <div class="cat-word-link">
                                         <span class="cat-word">Kategori:</span>

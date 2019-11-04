@@ -10,22 +10,30 @@ add_action( 'wp_ajax_get_cat', 'ajax_show_cats_posts' );
 add_action( 'wp_ajax_nopriv_get_cat', 'ajax_show_cats_posts' );
 function ajax_show_cats_posts() {
 
-    $link = ! empty( $_POST['link'] ) ? esc_attr( $_POST['link'] ) : false;
-
-    $args = array(
-        'category_name' => $link,
+    $args = [
         'exclude' => 1,
         'post_type' => 'post',
         'post_status' => 'publish',
         'numberposts' => -1,
-    );
-    $posts = get_posts($args);
+    ];
 
-    if ( ! $posts ) {
-        die( 'Post not found' );
+    $category_id = [];
+    if(isset($_POST['link']) && !empty($_POST['link'])) {
+        $links = [];
+        foreach($_POST['link'] as $link) {
+            $links .= esc_attr($link) . ',';
+        }
+
+        $args['category'] = $links;
     }
 
-    include_once ('ajax-template.php');
+    $posts = get_posts($args);
+
+    if (!$posts) {
+        die('Post not found');
+    }
+
+    include_once('ajax-template.php');
     wp_die();
 }
 

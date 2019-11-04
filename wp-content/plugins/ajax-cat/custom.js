@@ -4,12 +4,19 @@ jQuery(document).ready(function ($) {
     let $mainBox = $('.card-block');
 
     // Отправка ajax запроса при клике по ссылке на рубрику в виджете "Рубрики"
-    $('.cats-btns a').click(function (e) {
+    $('.checkbox-select').change(function (e) {
         e.preventDefault();
 
-        var linkCat = $(this).attr('href'); console.log(linkCat);
+        checkboxValues = [];
+        $('.checkbox-select').each(function () {
+            $('.checkbox-select').empty();
+            if (this.checked) {
+                checkboxValues.push($(this).val());
+            }
+        });
 
-        ajaxCat(linkCat);
+        ajaxCat(checkboxValues);
+
     });
 
     /**
@@ -18,7 +25,7 @@ jQuery(document).ready(function ($) {
      * @param linkCat ссылка на категогию
      */
     function ajaxCat(linkCat) {
-        $mainBox.animate({opacity: 0.5}, 300);
+        $mainBox.animate({opacity: 0.7}, 100);
 
         jQuery.post(
             localizeScriptObject.ajaxurl,
@@ -30,7 +37,7 @@ jQuery(document).ready(function ($) {
 
                 $mainBox
                     .html(response)
-                    .animate({opacity: 1}, 300);
+                    .animate({opacity: 1}, 100);
             });
     }
 
