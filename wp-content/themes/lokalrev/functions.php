@@ -177,16 +177,6 @@ function lokalrev_widgets_init() {
         'after_title'   => '</h2>',
     ) );
 
-    register_sidebar( array(
-        'name'          => esc_html__( 'Single Blog Sidebar', 'lokalrev' ),
-        'id'            => 'sidebar-single-blog',
-        'description'   => esc_html__( 'Add widgets here.', 'lokalrev' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ) );
-
 }
 add_action( 'widgets_init', 'lokalrev_widgets_init' );
 
@@ -238,3 +228,101 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Filter the except length to 25 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function wpdocs_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+/**
+ * Filter the excerpt "read more" string.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function wpdocs_excerpt_more( $more ) {
+    return '...';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+
+function format_comment() {  ?>
+<li>This is whack, yo.</li>
+<?php }
+
+
+/**
+ * Callback Function for lokalrev Theme comment.php
+ */
+if ( ! function_exists( 'lokalrev_comment' ) ) :
+    function lokalrev_comment( $comment, $args, $depth ) {
+        global $commentnumber;
+        $GLOBALS['comment'] = $comment;
+        switch ( $comment->comment_type ) :
+            case 'pingback' :
+            case 'trackback' : ?>
+                <li class="post pingback">
+                    <p><?php _e( 'Pingback:', 'my_press' ); ?> <?php comment_author_link(); ?></p>
+                    <?php edit_comment_link( __( 'Edit', 'my_press' ), '<span class="edit-link">', '</span>' ); ?>
+                </li>
+                <?php break;
+            default :
+                $commentnumber++; ?>
+            <div <?php comment_class(); ?> id="div-comment-<?php comment_ID(); ?>">
+                <div id="comment-<?php comment_ID(); ?>" class="comment">
+                    <div class="comment-meta">
+                        <div class="author-img">
+                            <?php $avatar_size = 55; echo get_avatar( $comment, $avatar_size ); ?>
+                        </div>
+
+
+                        <?php if ( $comment->comment_approved == '0' ) : ?>
+                            <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'my_press' ); ?></em>
+                        <?php endif; ?>
+                    </div>
+                    <div class="comment-content">
+                        <div class="comment-author vcard">
+                            <?php
+                            //                            $avatar_size = 55;
+                            $comment_date = get_comment_date();
+                            $current_date = current_time('mysql');
+                            if ( '0' != $comment->comment_parent )
+                                $avatar_size = 39;
+                            //                            echo get_avatar( $comment, $avatar_size );
+                            /* translators: 1: comment author, 2: date and time */
+                            printf( __( '%1$s', 'my_press' ),
+                                sprintf( '<span class="fn">%s</span>', get_comment_author_link() )
+                            );
+                            echo '<span class="days-ago">';
+                            echo lokalrev_date_different( $current_date, $comment_date );
+                            echo ' dage siden</span>';
+                            ?>
+                        </div><!-- .comment-author .vcard -->
+                        <!--<span class="commentnumber"><?php /*echo $commentnumber; */?></span>-->
+                        <?php comment_text(); ?>
+                    </div>
+                    <!--<div class="reply">
+                        <?php /*comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'my_press' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); */?>
+                    </div>--><!-- .reply -->
+                    <?php //edit_comment_link( __( 'Edit', 'my_press' ), '<span class="edit-link">', '</span>' ); ?>
+                </div><!-- #comment-## -->
+                <?php
+                break;
+        endswitch;
+    }
+endif;
+
+/**
+ * Gen Different Betwean Two Dates in Days.
+ */
+function lokalrev_date_different ($d1, $d2) {
+
+    // Return the number of days between the two dates:
+    return round(abs(strtotime($d1) - strtotime($d2))/86400);
+
+}

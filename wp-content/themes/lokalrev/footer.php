@@ -18,28 +18,28 @@
             <div class="first-row row">
                 <div class="col-12 col-sm-4 col-lg-3">
                     <?php if ( is_active_sidebar( 'sidebar-footer-2' ) ) : ?>
-                        <div id="true-foot" class="sidebar">
+                        <div id="true-foot-2" class="sidebar">
                             <?php dynamic_sidebar( 'sidebar-footer-2' ); ?>
                         </div>
                     <?php endif; ?>
                 </div>
                 <div class="col-12 col-sm-4 col-lg-3">
                     <?php if ( is_active_sidebar( 'sidebar-footer-3' ) ) : ?>
-                        <div id="true-foot" class="sidebar">
+                        <div id="true-foot-3" class="sidebar">
                             <?php dynamic_sidebar( 'sidebar-footer-3' ); ?>
                         </div>
                     <?php endif; ?>
                 </div>
                 <div class="col-12 col-sm-4 col-lg-3">
                     <?php if ( is_active_sidebar( 'sidebar-footer-4' ) ) : ?>
-                        <div id="true-foot" class="sidebar">
+                        <div id="true-foot-4" class="sidebar">
                             <?php dynamic_sidebar( 'sidebar-footer-4' ); ?>
                         </div>
                     <?php endif; ?>
                 </div>
                 <div class="col-lg-3">
                     <?php if ( is_active_sidebar( 'sidebar-footer-5' ) ) : ?>
-                        <div id="true-foot" class="sidebar">
+                        <div id="true-foot-5" class="sidebar">
                             <?php dynamic_sidebar( 'sidebar-footer-5' ); ?>
                         </div>
                     <?php endif; ?>
@@ -48,7 +48,7 @@
             <div class="second-row row">
                 <div class="col">
                     <?php if ( is_active_sidebar( 'sidebar-footer-6' ) ) : ?>
-                        <div id="true-foot" class="sidebar">
+                        <div id="true-foot-6" class="sidebar">
                             <?php dynamic_sidebar( 'sidebar-footer-6' ); ?>
                         </div>
                     <?php endif; ?>
@@ -59,7 +59,7 @@
                 <div class="row">
                     <div class="col">
                         <?php if ( is_active_sidebar( 'sidebar-footer-7' ) ) : ?>
-                            <div id="true-foot" class="sidebar">
+                            <div id="true-foot-7" class="sidebar">
                                 <?php dynamic_sidebar( 'sidebar-footer-7' ); ?>
                             </div>
                         <?php endif; ?>

@@ -34,7 +34,7 @@ get_header();
                                                 </div>
                                             </div>
                                             <div class="entry-author-avatar">
-                                                <span><?php the_author(); ?></span>
+                                                <span>Af <?php the_author(); ?></span>
                                                 <span><?php echo get_avatar( $post->ID, 65 ); ?></span>
                                             </div>
                                         </div>
@@ -75,8 +75,9 @@ get_header();
                                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
                                     <div class="entry-content">
+                                        <div class="summary-text"><?php the_field('summary_text'); ?></div>
+                                        <div class="summary-signature"><?php the_field('summary_signature'); ?></div>
                                         <?php
-                                        the_field('summary');
                                         the_content( sprintf(
                                             wp_kses(
                                             /* translators: %s: Name of current post. Only visible to screen readers */
@@ -99,16 +100,16 @@ get_header();
                                             <div class="share-txt">Del vores viden</div>
                                             <div class="share-icons">
                                                 <a href="<?php the_field('facebook'); ?>">
-                                                    <img src="<?php echo get_template_directory_uri(); ?>/images/i-facebook.png" alt="Icon Search">
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/images/i-facebook.png" alt="Icon Facebook">
                                                 </a>
                                                 <a href="<?php the_field('twitter'); ?>">
-                                                    <img src="<?php echo get_template_directory_uri(); ?>/images/i-twitter.png" alt="Icon Search">
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/images/i-twitter.png" alt="Icon Twitter">
                                                 </a>
                                                 <a href="<?php the_field('linkedin'); ?>">
-                                                    <img src="<?php echo get_template_directory_uri(); ?>/images/i-linkedin.png" alt="Icon Search">
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/images/i-linkedin.png" alt="Icon LinkedIn">
                                                 </a>
                                                 <a href="<?php the_field('googleplus'); ?>">
-                                                    <img src="<?php echo get_template_directory_uri(); ?>/images/i-googleplus.png" alt="Icon Search">
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/images/i-googleplus.png" alt="Icon Googl+">
                                                 </a>
                                             </div>
                                         </div>
@@ -118,9 +119,9 @@ get_header();
                                                 <?php echo get_avatar( $post->ID, 108 ); ?>
                                             </div>
                                             <div class="author-credentials">
-                                                <div class="auth-name"></div>
-                                                <div class="aut-position"></div>
-                                                <div class="auth-resume"></div>
+                                                <div class="auth-name"><?php echo get_the_author_meta('display_name'); ?></div>
+                                                <div class="auth-position"><?php the_field('position_and_company'); ?></div>
+                                                <div class="auth-description"><?php echo get_the_author_meta('description'); ?></div>
                                             </div>
                                         </div>
                                     </div><!-- .entry-content -->
@@ -144,19 +145,51 @@ get_header();
                                     ?>
 
                                     <footer class="entry-footer">
-                                        <?php lokalrev_entry_footer(); ?>
+                                        <?php //lokalrev_entry_footer(); ?>
                                     </footer><!-- .entry-footer -->
                                 </article><!-- #post-<?php the_ID(); ?> -->
 
                             </div><!-- .col-lg-8 -->
                             <div class="single-blog-right-sidebar col-lg-4">
-                                <?php if ( is_active_sidebar( 'sidebar-single-blog' ) ) : ?>
-                                    <div id="true-foot" class="sidebar">
-                                        <?php dynamic_sidebar( 'sidebar-single-blog' ); ?>
-                                    </div>
-                                <?php endif; ?>
+                                <div id="sidebar" class="sidebar">
+
+                                <?php //$orig_post = $post;
+                                //global $post;
+                                $categories = get_the_category($post->ID);
+                                if ($categories) {
+                                    $category_ids = array();
+                                    foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+
+                                    $args=array(
+                                        'category__in'    => $category_ids,
+                                        'post__not_in'    => array($post->ID),
+                                        'posts_per_page'  => 3, // Number of related posts that will be shown.
+                                        'caller_get_posts'=> 1
+                                    );
+
+                                    $related_posts_query = new wp_query( $args );
+                                    if( $related_posts_query->have_posts() ) {
+                                        echo '<div id="related_posts"><h3>Relateret artikler</h3><ul>';
+                                        while( $related_posts_query->have_posts() ) {
+                                            $related_posts_query->the_post();?>
+
+                                            <li><div class="relatedthumb"><a href="<? the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a></div>
+                                                <div class="relatedcontent">
+                                                    <h4><a href="<? the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
+                                                    <?php //the_time('M j, Y') ?>
+                                                </div>
+                                            </li>
+                                            <?
+                                        }
+                                        echo '</ul></div>';
+                                    }
+                                }
+                                $post = $orig_post;
+                                wp_reset_query(); ?>
+
                                 <?php //get_sidebar(); ?>
-                            </div>
+                                </div><!-- .sidebar -->
+                            </div><!-- .single-blog-right-sidebar -->
                         </div><!-- .row -->
                     </div><!-- .container -->
                 </div><!-- .entry-container-sidebar -->

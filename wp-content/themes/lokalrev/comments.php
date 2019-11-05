@@ -26,7 +26,7 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<div class="comments-title"> <img src="<?php echo get_template_directory_uri(); ?>/images/i-comment.png" alt="Icon Comment">
 			<?php
 			$lokalrev_comment_count = get_comments_number();
 			if ( '1' === $lokalrev_comment_count ) {
@@ -38,21 +38,36 @@ if ( post_password_required() ) {
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $lokalrev_comment_count, 'comments title', 'lokalrev' ) ),
+//					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $lokalrev_comment_count, 'comments title', 'lokalrev' ) ),
+					esc_html( _nx( '%1$s kommentarer ', '%1$s kommentarer ', $lokalrev_comment_count, 'lokalrev' ) ),
 					number_format_i18n( $lokalrev_comment_count ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			}
 			?>
-		</h2><!-- .comments-title -->
+		</div><!-- .comments-title -->
+
+        <div class="write-your-comment-wrap">
+            <div class="write-your-comment">
+                <div class="call-to-comment">Skriv en kommentar ...</div>
+                <div class="instructions">
+                    <div class="instruction-txt">Du skal være logget ind for at skrive en kommentar</div>
+                    <a class="instruction-login-link" href="#">Log ind</a>
+                </div>
+            </div>
+        </div>
 
 		<?php the_comments_navigation(); ?>
 
 		<ol class="comment-list">
 			<?php
 			wp_list_comments( array(
-				'style'      => 'ol',
-				'short_ping' => true,
+			        'type' => 'comment',
+                    'style'      => 'div',
+                    'short_ping' => true,
+                    'max_depth'  => 1,
+                    'avatar_size' => 55,
+                    'callback'    => 'lokalrev_comment',
 			) );
 			?>
 		</ol><!-- .comment-list -->
@@ -63,7 +78,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() ) :
 			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'lokalrev' ); ?></p>
+			<p class="no-comments"><?php //esc_html_e( 'Comments are closed.', 'lokalrev' ); ?></p>
 			<?php
 		endif;
 

@@ -56,9 +56,10 @@ get_header();
                         <?php
                         global $post; // не обязательно
                         $cats_posts = get_posts( array(
-                            'category_name' => '',
-                            'exclude' => 1,
-                            'post_type' => 'post',
+                                'numberposts'   => -1,
+                                'category_name' => '',
+                                'exclude'       => 1,
+                                'post_type'     => 'post',
                         ) ); ?>
 
                         <div class="row">
