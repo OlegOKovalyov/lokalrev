@@ -130,12 +130,6 @@ get_header();
                                     while ( have_posts() ) :
                                         the_post();
 
-//                                    the_field('summary');
-//                                    the_content();
-//                                get_template_part( 'template-parts/content', get_post_type() );
-
-//                                        the_post_navigation();
-
                                         // If comments are open or we have at least one comment, load up the comment template.
                                         if ( comments_open() || get_comments_number() ) :
                                             comments_template();
@@ -153,8 +147,7 @@ get_header();
                             <div class="single-blog-right-sidebar col-lg-4">
                                 <div id="sidebar" class="sidebar">
 
-                                <?php //$orig_post = $post;
-                                //global $post;
+                                <?php
                                 $categories = get_the_category($post->ID);
                                 if ($categories) {
                                     $category_ids = array();
@@ -176,7 +169,6 @@ get_header();
                                             <li><div class="relatedthumb"><a href="<? the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_post_thumbnail('thumbnail'); ?></a></div>
                                                 <div class="relatedcontent">
                                                     <h4><a href="<? the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h4>
-                                                    <?php //the_time('M j, Y') ?>
                                                 </div>
                                             </li>
                                             <?

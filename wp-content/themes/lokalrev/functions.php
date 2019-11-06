@@ -288,12 +288,10 @@ if ( ! function_exists( 'lokalrev_comment' ) ) :
                     <div class="comment-content">
                         <div class="comment-author vcard">
                             <?php
-                            //                            $avatar_size = 55;
                             $comment_date = get_comment_date();
                             $current_date = current_time('mysql');
                             if ( '0' != $comment->comment_parent )
                                 $avatar_size = 39;
-                            //                            echo get_avatar( $comment, $avatar_size );
                             /* translators: 1: comment author, 2: date and time */
                             printf( __( '%1$s', 'my_press' ),
                                 sprintf( '<span class="fn">%s</span>', get_comment_author_link() )
@@ -303,13 +301,8 @@ if ( ! function_exists( 'lokalrev_comment' ) ) :
                             echo ' dage siden</span>';
                             ?>
                         </div><!-- .comment-author .vcard -->
-                        <!--<span class="commentnumber"><?php /*echo $commentnumber; */?></span>-->
                         <?php comment_text(); ?>
                     </div>
-                    <!--<div class="reply">
-                        <?php /*comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'my_press' ), 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); */?>
-                    </div>--><!-- .reply -->
-                    <?php //edit_comment_link( __( 'Edit', 'my_press' ), '<span class="edit-link">', '</span>' ); ?>
                 </div><!-- #comment-## -->
                 <?php
                 break;
@@ -318,7 +311,7 @@ if ( ! function_exists( 'lokalrev_comment' ) ) :
 endif;
 
 /**
- * Gen Different Betwean Two Dates in Days.
+ * Get Different Betwean Two Dates in Days.
  */
 function lokalrev_date_different ($d1, $d2) {
 

@@ -38,7 +38,6 @@ if ( post_password_required() ) {
 			} else {
 				printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
-//					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $lokalrev_comment_count, 'comments title', 'lokalrev' ) ),
 					esc_html( _nx( '%1$s kommentarer ', '%1$s kommentarer ', $lokalrev_comment_count, 'lokalrev' ) ),
 					number_format_i18n( $lokalrev_comment_count ),
 					'<span>' . get_the_title() . '</span>'
