@@ -185,9 +185,18 @@
 
 
 @media (max-width: 480px) {
+  .site-header-wrap .custom-logo {
+    max-width: 210px;
+    height: auto;
+  }
+
   .page-template-mainpage {
     form input[type=submit].btn_form {
       font-size: 14px;
+    }
+
+    .hero-block .hero-btn a {
+      font-size: 18px;
     }
   }
 }

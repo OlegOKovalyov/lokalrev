@@ -1,7 +1,5 @@
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-	//font-family: 'Domine', serif;
-	//font-family: 'Sagona', serif;
 }
 
 h2 {
@@ -20,4 +18,43 @@ h4 {
   font-size: 20px;
   font-weight: 800;
   line-height: 24px;
+}
+
+@media (max-width: 1439px) {
+  .home h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .home h1,
+  .page-template .blog-hero-block h1,
+  .single-post .single-blog-block h1 {
+    font-size: 42px;
+  }
+
+  .home .red-block h2,
+  .home .pink-block h2 {
+    font-size: 42px;
+  }
+
+  .home .slider-block h3,
+  .home .slider-block .white #slider_88 .sa_hover_container h3 {
+    font-size: 30px;
+  }
+
+  .page-template .card-block .container .card-title h5 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .home .hero-block h1,
+  .page-template .blog-hero-block h1,
+  .single-post .single-blog-block h1 {
+    font-size: 32px;
+    line-height: 40px;
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
 }
